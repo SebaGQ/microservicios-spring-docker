@@ -1,18 +1,28 @@
-# microservicios-spring-docker
-Ecosistema de microservicios desarrollado con Spring Cloud y contenerizado con Docker. Siguiendo principios SOLID y buenas prácticas de estructura, código, manejo de excepciones, manejo de dependencias, etc.
-La idea de este proyecto es demostrar dominio en el desarrollo de arquitecturas basadas en microservicios, siempre de la mano de las buenas prácticas.
+# Microservicios con Spring y Docker
 
-[README EN PROGRESO]
+Ecosistema de microservicios desarrollado con **Spring Cloud** y contenerizado con **Docker**. Se han seguido los principios SOLID, además de buenas prácticas en estructura, código, manejo de excepciones y manejo de dependencias. El objetivo de este proyecto es demostrar dominio en el desarrollo de arquitecturas basadas en microservicios, manteniendo siempre dominio sobre las buenas prácticas.
 
+> **Nota**: Este README se encuentra en progreso.
 
-Cada proyecto está en su propia branch, están detalladamente documentados y en ellos se explica las buenas prácticas aplicadas y el por qué de cada decisión tomada.
-Se puede encontrar la documentación en las diversas capas de la aplicacion, como en los controller, services, entities, etc, así como en los archivos claves de configuración, como los Dockerfile o los application.yml.
+## Contenido
 
-Actualmente el proyecto está formado por Eureka, Gateway, Cliente-Mesa-APP , Reservas-APP.
-Cliente-Mesa-APP y Reservas-APP consisten en API Rest comunicadas entre sí, mientras que Eureka y Gateway son parte clave de un ecosistema de microservicios desarrollado con Spring Cloud.
+Cada microservicio está en su propia rama y cuenta con una documentación detallada. En ellos, se explican las buenas prácticas aplicadas y las razones por las que se tomó cada decisión. La documentación se puede encontrar en diversas capas de la aplicación, como en los `controllers`, `services`, `entities`, etc. También se documentan archivos clave de configuración como los `Dockerfile` o los `application.yml`.
 
-Algunos puntos pendientes son: 
-- Implementar un servicio de centralización de configuraciones.
+### Microservicios Actuales
+
+- **Eureka**: Servicio de descubrimiento.
+- **Gateway**: Puerta de enlace para la comunicación.
+- **Cliente-Mesa-APP**: API Rest.
+- **Reservas-APP**: API Rest.
+
+Las APIs Rest `Cliente-Mesa-APP` y `Reservas-APP` se comunican entre sí. En cambio, `Eureka` y `Gateway` son componentes clave del ecosistema desarrollado con Spring Cloud.
+
+## Pendientes
+
+Hay ciertas funcionalidades y características que no se implementaron, como:
+
+- Servicio de centralización de configuraciones.
 - Integrar seguridad con Oauth2.
-- Agregar capas de monitoreo.
-Esto no se ha implementado para no aumentar innecesariamente la complejidad del proyecto, ya que es un proyecto meramente demostrativo. Tal vez más adelante se haga.
+- Capas de monitoreo.
+
+Se decidió no implementar estas características de momento para no añadir complejidad innecesaria, ya que la finalidad de este proyecto es meramente demostrativa. Tal vez se agreguen en el futuro.
