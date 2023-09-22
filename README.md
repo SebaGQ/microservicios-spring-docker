@@ -10,3 +10,9 @@ Se puede encontrar la documentación en las diversas capas de la aplicacion, com
 
 Actualmente el proyecto está formado por Eureka, Gateway, Cliente-Mesa-APP , Reservas-APP.
 Cliente-Mesa-APP y Reservas-APP consisten en API Rest comunicadas entre sí, mientras que Eureka y Gateway son parte clave de un ecosistema de microservicios desarrollado con Spring Cloud.
+
+Algunos puntos pendientes son: 
+- Implementar un servicio de centralización de configuraciones.
+- Integrar seguridad con Oauth2.
+- Agregar capas de monitoreo.
+Esto no se ha implementado para no aumentar innecesariamente la complejidad del proyecto, ya que es un proyecto meramente demostrativo. Tal vez más adelante se haga.
