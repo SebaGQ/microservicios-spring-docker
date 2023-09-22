@@ -1,0 +1,104 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: reservas-service
+
+  datasource:
+    # URL de conexión a base de datos H2
+    url: jdbc:h2:mem:testdb-reservas
+    # Driver para la base de datos H2
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    # Dialecto para Hibernate
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      # Habilitar la consola H2
+      enabled: true
+      # Ruta de acceso para la consola H2
+      path: /h2-console
+
+eureka:
+  client:
+    serviceUrl:
+      # URL de Eureka
+      defaultZone: http://eureka:8761/eureka/
+    # Indica que debe registrarse en Eureka
+    register-with-eureka: true
+    # Indica que puede obtener una lista de servicios registrados en Eureka.
+    fetch-registry: true
+    healthcheck:
+      # Habilita comprobaciones de salud (heart beats)
+      enabled: true
+  instance:
+    # ID de instancia, con este id se registran en eureka.
+    instance-id: ${spring.application.name}:${random.uuid}
+    # Frecuencia de heartbeats.
+    lease-renewal-interval-in-seconds: 30
+    # Tiempo límite para que se considere fallido.
+    lease-expiration-duration-in-seconds: 65
+
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      clienteMesaService:
+        # Tamaño de la ventana deslizante para calcular el porcentaje de fallos
+        slidingWindowSize: 100
+        # Porcentaje de fallos permitidos antes de abrir el circuit breaker
+        failureRateThreshold: 50
+        # Tiempo que el circuit breaker permanecerá abierto (en ms)
+        waitDurationInOpenState: 60000
+        # Porcentaje de llamadas que pueden ser lentas antes de considerarlas como fallos
+        slowCallRateThreshold: 50
+        # Duración de una llamada (en ms) para considerarla como lenta
+        slowCallDurationThreshold: 2000
+        # Número de llamadas permitidas cuando el circuit breaker está en estado "half-open"
+        permittedNumberOfCallsInHalfOpenState: 10
+        # Número mínimo de llamadas antes de calcular el porcentaje de fallos
+        minimumNumberOfCalls: 20
+        # Tipo de ventana deslizante, en este caso está basada en tiempo
+        slidingWindowType: TIME_BASED
+        # El circuit breaker automáticamente se moverá de estado abierto a "half-open" después del tiempo definido en 'waitDurationInOpenState'
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  bulkhead:
+    instances:
+      clienteMesaService:
+        # Número máximo de llamadas concurrentes que se permiten al servicio. Si se supera, las nuevas llamadas serán rechazadas.
+        maxConcurrentCalls: 20
+        # Tiempo máximo que una llamada puede esperar en la cola antes de ser rechazada (en ms) si el bulkhead está lleno
+        maxWaitDuration: 500
+  retry:
+    instances:
+      clienteMesaService:
+        # Máximo número de reintentos
+        maxAttempts: 3
+        # Tiempo de espera (en ms) entre un fallo y el reintento.
+        waitDuration: 500
+        #Cada fallo multiplicará el tiempo de espera por el valor que se indica en 'exponentialBackoffMultiplier'
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+        #Indicamos las excepciones que no necesitan hacer retry en caso de fallar.
+        ignore-exceptions:
+          - com.microservicios.reservas.reservasapp.exceptions.ClienteNotFoundException
+          - com.microservicios.reservas.reservasapp.exceptions.MesaNotFoundException
+          - com.microservicios.reservas.reservasapp.exceptions.MesaNotAvailableException
+          - com.microservicios.reservas.reservasapp.exceptions.CapacidadExcedidaException
+          - com.microservicios.reservas.reservasapp.exceptions.FeignNotFoundException
+          - com.microservicios.reservas.reservasapp.exceptions.ReservaNotFoundException
+
+logging:
+  level:
+    root: INFO
+    com.microservicios.reservas: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.data: WARN
+    org.hibernate: WARN
+    #Muestra los parametros de las consultas a la base de datos
+    org.hibernate.type.descriptor.sql: TRACE
