@@ -1,0 +1,43 @@
+version: '3'
+
+# Una buena practica es que el orquestador (o un servidor de configuraciones) entregue a la aplicación sus variables de entorno.
+# Aun no se implementa esto debido a que se buscó agilizar un poco el trabajo, en la proxima versión se piensa implementar.
+
+services:
+  eureka:
+    image: sebagq/microservicios-springcloud:eureka-v1
+    ports:
+      - "8761:8761"
+    networks:
+      - microservicios-network
+
+  gateway:
+    image: sebagq/microservicios-springcloud:gateway-v1
+    depends_on:
+      - eureka
+    ports:
+      - "8081:8081"
+    networks:
+      - microservicios-network
+
+  reserva-service:
+    image: sebagq/microservicios-springcloud:reservas-v1
+    depends_on:
+      - eureka
+    ports:
+      - "8083:8083"
+    networks:
+      - microservicios-network
+
+  cliente-mesa-service:
+    image: sebagq/microservicios-springcloud:cliente-mesa-v1
+    depends_on:
+      - eureka
+    ports:
+      - "8082:8082"
+    networks:
+      - microservicios-network
+
+networks:
+  microservicios-network:
+    driver: bridge
