@@ -1,0 +1,56 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      # Habilitar como Gateway
+      enabled: true
+      discovery:
+        locator:
+          # Usar servidor de descubrimiento para encontrar direcciones.
+          enabled: true
+
+      # Rutas de los servicios a los que se dirigira el gateway.
+      routes:
+        # Rutas para cliente-mesa-service
+        - id: cliente-mesa-service
+          uri: lb://cliente-mesa-service
+          predicates:
+            # Para habilitar balanceo de carga, basta con poner el lb://
+            - Path=/api/clientes/**,/api/mesas/**
+
+        # Ruta para reservas-service
+        - id: reservas-service
+          uri: lb://reservas-service
+          predicates:
+            - Path=/api/reservas/**
+
+eureka:
+  client:
+    serviceUrl:
+      # URL de Eureka
+      defaultZone: http://eureka:8761/eureka/
+    # Indica que debe registrarse en Eureka
+    register-with-eureka: true
+    # Indica que puede obtener una lista de servicios registrados en Eureka.
+    fetch-registry: true
+    healthcheck:
+      # Habilita comprobaciones de salud (heart beats)
+      enabled: true
+
+  instance:
+    # ID de instancia, con este id se registran en eureka.
+    instance-id: ${spring.application.name}:${random.uuid}
+    # Frecuencia de heartbeats.
+    lease-renewal-interval-in-seconds: 30
+    # Tiempo límite para que se considere fallido.
+    lease-expiration-duration-in-seconds: 65
+
+logging:
+  level:
+    org.springframework: WARN
+    org.springframework.cloud.gateway: INFO
+    com.microservicios.gateway: INFO
