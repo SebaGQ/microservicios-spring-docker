@@ -35,7 +35,7 @@ Eureka se encarga del descubrimiento de servicios, significa que registra la dir
 
 
 #### Lógica de la aplicación
-La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir/editar/eliminar mesas y clientes, y  hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
+La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir/editar/eliminar mesas y clientes, y  hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y sus respectivos métodos, trabajan en coonjunto comunicándose mediante FeignClient.
 
 Estas API se desarrollaron según las buenas prácticas de diseño y respetando los principios SOLID, esto se ve reflejado por ejemplo en:
 - Se definen los nombres de variables, métodos, atributos y endpoints según las convenciones, lo que facilita la legibilidad y permite una rápida adaptación por parte de otros desarrolladores.
