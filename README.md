@@ -26,6 +26,18 @@ Los servicios `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en 
 
 <img src="./diagrama-arquitectura.png" alt="Imagen 1" width="1200">
 
+## Descubrimiento de servicios
+Eureka se encarga del descubrimiento de servicios, significa que sabe en que dirección se encuentran los servicios, y esto es necesario para que los servicios puedan comunicarse entre sí, por ello es que todos se registran en eureka, que mediante comprobaciones de estado (heartbeats) verifica que los servicios se encuentren funcionando correctamente, usando esta información se encarga además de repartir las solicitudes entre las diferentes instancias de los servicios, por ejemplo si tengo 2 reserva-app funcionando y 1 de ellos está saturado entonces eureka se encargará de que la solicitud se dirija al que está libre.
+
+## Manejo de solicitudes
+El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas las solicitudes se dirigirán al Gateway, y este las redireccionará al servicio correspondiente según nuestras configuraciones. Para saber hacia qué dirección debe dirigir las solicitudes le pide una lista de los servicios registrados a Eureka.
+
+## Lógica de la aplicación
+La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir mesas, clientes, y hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
+
+## Arquitectura de la API Rest
+
+
 ### Cómo ejecutar
 
 Para ejecutar la aplicación basta con ejecutar el `docker-compose.yml` que se encuentra en el branch main.
