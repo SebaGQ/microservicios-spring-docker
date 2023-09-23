@@ -22,7 +22,7 @@ Las APIs Rest `Cliente-Mesa-APP` y `Reservas-APP` se comunican entre sí. En cam
 Hay ciertas funcionalidades y características que no se implementaron, como:
 
 - Servicio de centralización de configuraciones.
-- Integrar seguridad con Oauth2.
-- Capas de monitoreo.
+- Seguridad con Oauth2.
+- Herramientas de metricas y monitoreo.
 
-Se decidió no implementar estas características de momento para no añadir complejidad innecesaria, ya que la finalidad de este proyecto es meramente demostrativa. Tal vez se agreguen en el futuro.
+Se decidió no implementar estas características de momento para no añadir complejidad innecesaria, ya que la finalidad de este proyecto es mostrar conocimiento sobre microservicios y buenas practicas. Tal vez se agreguen en el futuro.
