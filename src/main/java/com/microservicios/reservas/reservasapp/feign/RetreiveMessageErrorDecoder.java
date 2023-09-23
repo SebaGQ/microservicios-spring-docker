@@ -11,6 +11,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
 import java.io.IOException;
 
+/**
+ * Esta clase se implementa porque las excepciones en la petición feign realizada a otro servicio
+ * no se pasan automáticamente como excepción en la respuesta. Por ello se debe tener un ErrorDecoder
+ * personalizado que permita devolver la misma excepción que se obtiene en la petición feign.
+ */
 public class RetreiveMessageErrorDecoder implements ErrorDecoder {
     private final ErrorDecoder errorDecoder = new Default();
 
