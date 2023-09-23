@@ -1,6 +1,6 @@
 # Microservicios con Spring y Docker
 
-Ecosistema de microservicios desarrollado con **Spring Cloud** y contenerizado con **Docker**. Se han seguido los principios SOLID, además de buenas prácticas en estructura, código, manejo de excepciones y manejo de dependencias. El objetivo de este proyecto es demostrar dominio en el desarrollo de arquitecturas basadas en microservicios, manteniendo siempre dominio sobre las buenas prácticas.
+Ecosistema de microservicios desarrollado con **Spring Cloud** y contenerizado con **Docker**. Se han seguido los principios SOLID, además de buenas prácticas de desarrollo, tales como: código limpio, manejo robusto de excepciones y manejo eficiente de dependencias. El objetivo de este proyecto es demostrar dominio en el desarrollo de arquitecturas basadas en microservicios, manteniendo siempre dominio sobre las buenas prácticas.
 
 Los contenedores Docker de estos microservicios están disponibles en el siguiente repositorio público: https://hub.docker.com/r/sebagq/microservicios-springcloud
 El ´docker-compose.yml´ que se encuentra en el branch main puede usarse para cargar las imagenes desde ahí y ejecutar la aplicación fácilmente, en la sección **Cómo ejecutar** se encuentran los detalles.
