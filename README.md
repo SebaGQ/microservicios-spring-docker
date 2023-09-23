@@ -22,7 +22,7 @@ Cada microservicio está en su propia branch y cuenta con una documentación det
 
 Los servicios `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en conjunto. En cambio, `Eureka` y `Gateway` son componentes clave del ecosistema Spring Cloud.
 
-### Arquitectura proyecto
+## Arquitectura proyecto
 
 <img src="./diagrama-arquitectura.png" alt="Imagen 1" width="1200">
 
