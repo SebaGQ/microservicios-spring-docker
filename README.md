@@ -26,11 +26,13 @@ Los servicios `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en 
 
 <img src="./diagrama-arquitectura.png" alt="Imagen 1" width="1200">
 
+#### Manejo de solicitudes
+El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas las solicitudes se dirigirán al Gateway, y este las redireccionará al servicio correspondiente según nuestras configuraciones. Para saber hacia qué dirección debe dirigir las solicitudes le pide una lista de los servicios registrados a Eureka.
+
+
 #### Descubrimiento de servicios
 Eureka se encarga del descubrimiento de servicios, significa que registra la dirección actual de los servicios, y esto es necesario para que puedan comunicarse entre sí, por ello es que todos se registran en Eureka, y Eureka mediante comprobaciones de salud (heartbeats) verifica que los servicios se encuentren funcionando correctamente. Usando esta información se encarga además de repartir las solicitudes entre las diferentes instancias de los servicios (diciendole al gateway hacia qué instancia apuntar), por ejemplo si tengo 2 reserva-app funcionando y 1 de ellos está saturado entonces eureka se encargará de decirle al gateway que la solicitud se debe dirigir al que está libre.
 
-#### Manejo de solicitudes
-El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas las solicitudes se dirigirán al Gateway, y este las redireccionará al servicio correspondiente según nuestras configuraciones. Para saber hacia qué dirección debe dirigir las solicitudes le pide una lista de los servicios registrados a Eureka.
 
 #### Lógica de la aplicación
 La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir/editar/eliminar mesas y clientes, y  hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
