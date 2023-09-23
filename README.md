@@ -31,7 +31,7 @@ El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas 
 
 
 #### Descubrimiento de servicios
-Eureka se encarga del descubrimiento de servicios, significa que registra la dirección actual de los servicios, y esto es necesario para que puedan comunicarse entre sí, por ello es que todos se registran en Eureka, y Eureka mediante comprobaciones de salud (heartbeats) verifica que los servicios se encuentren funcionando correctamente. Usando esta información se encarga además de repartir las solicitudes entre las diferentes instancias de los servicios (diciendole al gateway hacia qué instancia apuntar), por ejemplo si tengo 2 reserva-app funcionando y 1 de ellos está saturado entonces eureka se encargará de decirle al gateway que la solicitud se debe dirigir al que está libre.
+Eureka se encarga del descubrimiento de servicios, significa que registra la dirección actual de los servicios, y esto es necesario para que puedan comunicarse entre sí, por ello es que todos se registran en Eureka, y Eureka mediante comprobaciones de salud (heartbeats) verifica que los servicios se encuentren funcionando correctamente. Usando esta información se encarga además de repartir las solicitudes entre las diferentes instancias de los servicios (diciendole al gateway hacia qué instancia apuntar), por ejemplo si tengo 2 instancias de reserva-app funcionando y 1 de ellos está saturado entonces eureka se encargará de decirle al gateway que la solicitud se debe dirigir al que está libre.
 
 
 #### Lógica de la aplicación
