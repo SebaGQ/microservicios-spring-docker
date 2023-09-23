@@ -2,8 +2,9 @@
 
 Ecosistema de microservicios desarrollado con **Spring Cloud** y contenerizado con **Docker**. Se han seguido los principios SOLID, además de buenas prácticas en estructura, código, manejo de excepciones y manejo de dependencias. El objetivo de este proyecto es demostrar dominio en el desarrollo de arquitecturas basadas en microservicios, manteniendo siempre dominio sobre las buenas prácticas.
 
-Los contenedores Docker de estas aplicaciones están disponibles en el siguiente repositorio público: https://hub.docker.com/r/sebagq/microservicios-springcloud
-El ´docker-compose.yml´ que se encuentra en el branch main puede usarsa para cargar las imagenes desde ahí y ejecutar la aplicación fácilmente, en la sección Cómo ejecutar
+Los contenedores Docker de estos microservicios están disponibles en el siguiente repositorio público: https://hub.docker.com/r/sebagq/microservicios-springcloud
+El ´docker-compose.yml´ que se encuentra en el branch main puede usarse para cargar las imagenes desde ahí y ejecutar la aplicación fácilmente, en la sección [Cómo ejecutar](#como-ejecutar) se encuentran los detalles.
+
 
 > **Nota**: Este README no está terminado.
 
@@ -20,7 +21,7 @@ Cada microservicio está en su propia rama y cuenta con una documentación detal
 
 Las APIs Rest `Cliente-Mesa-APP` y `Reservas-APP` se comunican entre sí. En cambio, `Eureka` y `Gateway` son componentes clave del ecosistema desarrollado con Spring Cloud.
 
-### Como ejecutar
+### <a name="como-ejecutar"></a>Cómo ejecutar
 
 Para ejecutar la aplicación basta con ejecutar el `docker-compose.yml` que se encuentra en el branch main.
 Para ejecutarlo debemos tener instalado Docker, y GIT.
