@@ -43,7 +43,7 @@ Estas API se desarrollaron según las buenas prácticas de diseño y respetando 
 - Uso de un Manejador Global de excepciones, apoyado de implementación de logs personalizados y un cuidadoso manejo de posibles excepciones para mejorar la depuración y robustez de la aplicación.
 - Definición de un Dockerfile que permite que las dependencias se manejen en la etapa de construccion de la imagen, esto implica un uso eficiente de recursos a la hora de desplegar la aplicación.
 
-### Cómo ejecutar
+## Cómo ejecutar
 
 Para ejecutar la aplicación basta con ejecutar el `docker-compose.yml` que se encuentra en el branch main.
 Para ejecutarlo debemos tener instalado Docker, y GIT.
