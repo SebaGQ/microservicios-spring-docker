@@ -33,7 +33,7 @@ Eureka se encarga del descubrimiento de servicios, significa que registra la dir
 El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas las solicitudes se dirigirán al Gateway, y este las redireccionará al servicio correspondiente según nuestras configuraciones. Para saber hacia qué dirección debe dirigir las solicitudes le pide una lista de los servicios registrados a Eureka.
 
 #### Lógica de la aplicación
-La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, tiene un CRUD mesas y clientes, y permite hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
+La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir/editar/eliminar mesas y clientes, y  hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
 
 Estas API se desarrollaron según las buenas prácticas de diseño y respetando los principios SOLID, esto se ve reflejado por ejemplo en:
 - Se definen los nombres de variables, métodos, atributos y endpoints según las convenciones, lo que facilita la legibilidad y permite una rápida adaptación por parte de otros desarrolladores.
