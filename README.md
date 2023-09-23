@@ -2,7 +2,7 @@
 
 Ecosistema de microservicios desarrollado con **Spring Cloud** y contenerizado con **Docker**. Se han seguido los principios SOLID, además de buenas prácticas de desarrollo, tales como: código limpio, manejo robusto de excepciones, manejo eficiente de dependencias en los contenedores, entre otras. El objetivo de este proyecto es demostrar dominio en el desarrollo de arquitecturas sólidas basadas en microservicios.
 
-Los contenedores Docker de estos microservicios están disponibles en el siguiente repositorio público: https://hub.docker.com/r/sebagq/microservicios-springcloud
+Estas aplicaciones se encuentran contenerizadas con Docker y están publicadas en el siguiente repositorio público: https://hub.docker.com/r/sebagq/microservicios-springcloud
 
 El `docker-compose.yml` que se encuentra en el branch main puede usarse para cargar las imagenes desde ahí y ejecutar la aplicación fácilmente, en la sección **Cómo ejecutar** se encuentran los detalles.
 
@@ -39,7 +39,7 @@ Estas API se desarrollaron según las buenas prácticas de diseño y respetando 
 - Se definen los nombres de variables, métodos, atributos y endpoints según las convenciones, lo que facilita la legibilidad y permite una rápida adaptación por parte de otros desarrolladores.
 - Cada capa de la aplicación tiene una única responsabilidad y esto se respeta de manera estricta.
 - Uso de DTO para evitar exposición de información y reducir la cantidad de datos en las solicitudes, lo que permite reducir tiempos de respuestas y costos.
-- Métodos desarrollados cuidadosamente para mantener la legitibidad, separar responsabilidades y facilitar futuras modificaciones en los métodos.
+- Métodos desarrollados cuidadosamente para mantener la legitibidad, separar responsabilidades y facilitar futuras modificaciones y nuevas funcionalidades.
 - Uso de un Manejador Global de excepciones, apoyado de implementación de logs personalizados y un cuidadoso manejo de posibles excepciones para mejorar la depuración y robustez de la aplicación.
 - Definición de un Dockerfile que permite que las dependencias se manejen en la etapa de construccion de la imagen, esto implica un uso eficiente de recursos a la hora de desplegar la aplicación.
 
