@@ -24,7 +24,7 @@ Los servicios `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en 
 
 ### Arquitectura proyecto
 
-![Imagen 1](./diagrama-arquitectura.png)
+<img src="./diagrama-arquitectura.png" alt="Imagen 1" width="500">
 
 ### Cómo ejecutar
 
