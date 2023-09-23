@@ -35,8 +35,6 @@ El Gateway funciona como un punto de entrada a las solicitudes, es decir, todas 
 #### Lógica de la aplicación
 La aplicación consiste en un sistema de reserva de mesas para un restaurant, la lógica de negocio es bastante simple, permite añadir mesas, clientes, y hacer reservas en base a ello. `reservas-app` y `cliente-mesa-app` son aplicaciónes que consisten en API Rest con CRUD de las entidades principales y métodos que permiten por ejemplo registrar mesas, hacer o cancelar reservas, etc.
 
-#### Arquitectura de la API Rest
-
 
 ### Cómo ejecutar
 
