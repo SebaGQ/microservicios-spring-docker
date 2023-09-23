@@ -20,7 +20,7 @@ Cada microservicio está en su propia rama y cuenta con una documentación detal
 - **Cliente-Mesa-APP**: API Rest.
 - **Reservas-APP**: API Rest.
 
-Las APIs Rest `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en conjunto. En cambio, `Eureka` y `Gateway` son componentes clave del ecosistema Spring Cloud.
+Los servicios `Cliente-Mesa-APP` y `Reservas-APP` son API Rest que funcionan en conjunto. En cambio, `Eureka` y `Gateway` son componentes clave del ecosistema Spring Cloud.
 
 ### Cómo ejecutar
 
