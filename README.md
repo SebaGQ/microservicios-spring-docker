@@ -21,10 +21,10 @@ Las APIs Rest `Cliente-Mesa-APP` y `Reservas-APP` se comunican entre sí. En cam
 
 Para ejecutar la aplicación basta con ejecutar el `docker-compose.yml` que se encuentra en el branch main.
 Para ejecutarlo debemos tener instalado Docker, y GIT.
-- Ir a algún directorio donde queramos descargar el `docker-compose.yml` .
-- Ejecutar en la consola: **git clone -b main https://github.com/SebaGQ/microservicios-spring-docker.git**
-- Ir al directorio /microservicios-spring-docker que se acaba de crear  y ejecutar **docker-compose up** .
-- Esperar a que inicie la aplicación (puede demorar un poco en descargarse, depende del internet), es importante tener docker abierto.
+1. Ir a algún directorio donde queramos descargar el `docker-compose.yml` .
+2. Ejecutar en la consola: **git clone -b main https://github.com/SebaGQ/microservicios-spring-docker.git**
+3. Ir al directorio /microservicios-spring-docker que se acaba de crear  y ejecutar **docker-compose up** .
+4. Esperar a que inicie la aplicación (puede demorar un poco en descargarse, depende del internet), es importante tener docker abierto.
 
 
 ## Pendientes
