@@ -41,7 +41,7 @@ La aplicación consiste en un sistema de reserva de mesas para un restaurant, la
 Para ejecutar la aplicación basta con ejecutar el `docker-compose.yml` que se encuentra en el branch main.
 Para ejecutarlo debemos tener instalado Docker, y GIT.
 1. Ir a algún directorio donde queramos descargar el `docker-compose.yml` .
-2. Ejecutar en la consola: **git clone -b main https://github.com/SebaGQ/microservicios-spring-docker.git**
+2. Ejecutar en la terminal: **git clone -b main https://github.com/SebaGQ/microservicios-spring-docker.git**
 3. Ir al directorio /microservicios-spring-docker que se acaba de crear  y ejecutar **docker-compose up** .
 4. Esperar a que inicie la aplicación (puede demorar un poco en descargarse, depende del internet), es importante tener docker abierto.
 
