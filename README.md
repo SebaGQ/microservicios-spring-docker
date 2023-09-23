@@ -37,7 +37,7 @@ La aplicación consiste en un sistema de reserva de mesas para un restaurant, la
 
 Estas API se desarrollaron según las buenas prácticas de diseño y respetando los principios SOLID, esto se ve reflejado por ejemplo en:
 - Se definen los nombres de variables, métodos, atributos y endpoints según las convenciones, lo que facilita la legibilidad y permite una rápida adaptación por parte de otros desarrolladores.
-- Cada capa de la aplicación tiene una única responsabilidad y esto se respeta de manera estricta, es decir, el controlador solo maneja las solicitudes,
+- Cada capa de la aplicación tiene una única responsabilidad y esto se respeta de manera estricta.
 - Uso de DTO para evitar exposición de información y reducir la cantidad de datos en las solicitudes, lo que permite reducir tiempos de respuestas y costos.
 - Métodos desarrollados cuidadosamente para mantener la legitibidad, separar responsabilidades y facilitar futuras modificaciones en los métodos.
 - Uso de un Manejador Global de excepciones, apoyado de implementación de logs personalizados y un cuidadoso manejo de posibles excepciones para mejorar la depuración y robustez de la aplicación.
