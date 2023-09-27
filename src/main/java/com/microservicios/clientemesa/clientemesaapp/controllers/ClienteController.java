@@ -4,6 +4,8 @@ import com.microservicios.clientemesa.clientemesaapp.dto.ClienteDTO;
 import com.microservicios.clientemesa.clientemesaapp.exceptions.BadRequestException;
 import com.microservicios.clientemesa.clientemesaapp.services.ClienteService;
 import jakarta.validation.Valid;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -11,6 +13,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
@@ -54,7 +58,7 @@ public class ClienteController {
     }
 
     /**
-     * Al usar la notacion Valid en conjunto con RequestBody le estamos diciendo que valide la entidad apenas
+     * Al usar la notacion Valid en conjunto con RequestBody le estamos diciendo que valide el objeto apenas
      * la reciba, es decir, antes de comenzar a trabajar con ella, lo que es bastante eficiente.
      * Esta validacion consiste en validar que se cumplan las notaciones como NotBlank o NotNull que estén presentes en ClienteDTO.
      */
@@ -77,3 +81,5 @@ public class ClienteController {
         return ResponseEntity.noContent().build();
     }
 }
+
+

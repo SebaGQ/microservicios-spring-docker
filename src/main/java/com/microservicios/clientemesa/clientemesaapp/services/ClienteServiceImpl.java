@@ -55,6 +55,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ClienteDTO getClienteById(Long id) {
         try {
             Cliente cliente = clienteRepository.findById(id)

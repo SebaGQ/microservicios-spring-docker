@@ -15,15 +15,15 @@ public class ClienteDTO {
     @JsonProperty("idCliente")
     private Long idCliente;
 
-    @NotBlank(message = "INVALID NAME VALUE")
+    @NotBlank(message = "NOMBRE INVALIDO")
     @JsonProperty("nombreCliente")
     private String nombreCliente;
 
-    @Email(message = "INVALID EMAIL")
+    @Email(message = "EMAIL INVALIDO")
     @JsonProperty("email")
     private String email;
 
-    @NotBlank(message = "INVALID PHONE NUMBER")
+    @NotBlank(message = "TELEFONO INVALIDO")
     @JsonProperty("telefono")
     private String telefono;
 

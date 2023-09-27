@@ -13,22 +13,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente", unique = true, nullable = false)
     private Long idCliente;
 
-    @NotBlank(message = "NOMBRE INVALIDO")
     @Column(name="nombre_cliente")
     private String nombreCliente;
 
-    @Email(message = "EMAIL INVALIDO")
     @Column(name="email", unique = true)
     private String email;
 
-    @NotBlank(message = "TELEFONO INVALIDO")
     @Column(name="telefono")
     private String telefono;
-
 }

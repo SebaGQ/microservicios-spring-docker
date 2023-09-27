@@ -37,22 +37,4 @@ public class GlobalExceptionHandler {
         ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ErrorDTO> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
-        if(ex.getCause() instanceof ConstraintViolationException) {
-            // Chequeo para la restricción única del email.
-            if(ex.getMessage().contains("email")) {
-                ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST.value(), "El email ya está registrado.");
-                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-            }
-            // Chequeo para la restricción única del numero_mesa.
-            else if(ex.getMessage().contains("numero_mesa")) {
-                ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST.value(), "El número de mesa ya está registrado.");
-                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-            }
-        }
-        ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
-
 }
