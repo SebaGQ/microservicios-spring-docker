@@ -7,13 +7,13 @@ import com.microservicios.clientemesa.clientemesaapp.exceptions.DuplicatedMesaEx
 import com.microservicios.clientemesa.clientemesaapp.exceptions.MesaNotFoundException;
 import com.microservicios.clientemesa.clientemesaapp.exceptions.ServiceException;
 import com.microservicios.clientemesa.clientemesaapp.repositories.MesaRepository;
-import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -43,6 +43,7 @@ public class MesaServiceImpl implements MesaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Page<MesaDTO> getAllMesas(Pageable pageable) {
         try {
             Page<Mesa> mesasPage = mesaRepository.findAll(pageable);
@@ -55,6 +56,7 @@ public class MesaServiceImpl implements MesaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public MesaDTO getMesaById(Long id) {
         try {
             Mesa mesa = mesaRepository.findById(id)

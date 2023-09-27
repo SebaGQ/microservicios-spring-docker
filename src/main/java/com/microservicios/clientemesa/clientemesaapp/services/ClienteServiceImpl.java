@@ -44,6 +44,7 @@ public class ClienteServiceImpl implements ClienteService {
 
 
     @Override
+    @Transactional(readOnly = true)
     public Page<ClienteDTO> getAllClientes(Pageable pageable) {
         try {
             Page<Cliente> clientesPage = clienteRepository.findAll(pageable);
